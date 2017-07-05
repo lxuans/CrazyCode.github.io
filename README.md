@@ -1,0 +1,2 @@
+# CrazyCode.github.io
+crazycode
