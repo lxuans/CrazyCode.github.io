@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="photo.css"/>
+    <style>
+        body {
+            background: radial-gradient(200% 100% at bottom center, #f7987c, #898ed2, #6654d5, #482a7d , #1b2947);
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+        @keyframes rotate {
+            0% {
+                transform: perspective(500px) rotateZ(20deg) rotateX(-40deg) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(500px) rotateZ(20deg) rotateX(-40deg) rotateY(360deg);
+            }
+        }
+        .stars {
+            transform: perspective(500px);
+            transform-style: preserve-3d;
+            position: absolute;
+            bottom: 0;
+            perspective-origin: 50% 100%;
+            left: 50%;
+            animation: rotate 90s infinite linear;
+        }
+        .star {
+            width: 2px;
+            height: 2px;
+            background: #F7F7B6;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: 0 0 -300px;
+            transform: translate3d(0, 0, -300px);
+            backface-visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="stars"></div>
+<div class="container">
+    <img class="pic pic1" src="images/mm1.png">
+    <img class="pic pic2" src="images/mm1.png">
+    <img class="pic pic3" src="images/mm1.png">
+    <img class="pic pic4" src="images/haha.png">
+    <img class="pic pic5" src="images/mm1.png">
+    <img class="pic pic6" src="images/mm1.png">
+    <img class="pic pic7" src="images/mm1.png">
+    <img class="pic pic8" src="images/mm1.png">
+    <img class="pic pic9" src="images/mm1.png">
+    <img class="pic pic10" src="images/mm1.png">
+</div>
+
+<script src="js/jquery-1.12.2.js"></script>
+<script>
+    // 是指在页面dom树加载完毕后再执行里面的代码，这样能保证js代码正常运行。
+    $(document).ready(function () {
+        var stars = 800;
+        var $stars = $('.stars');
+        var r = 800;
+        for (var i = 0; i < stars; i++) {
+            var $star = $('<div/>').addClass('star');
+            $stars.append($star);
+        }
+        $('.star').each(function () {
+            var cur = $(this);
+            var s = 0.2 + Math.random() * 1;
+            var curR = r + Math.random() * 300;
+            cur.css({
+                //设置旋转元素的基点位置
+                transformOrigin: '0 0 ' + curR + 'px',
+                //元素偏移\旋转角度\缩放
+                transform: ' translate3d(0,0,-' + curR + 'px) rotateY(' + Math.random() * 360 + 'deg) rotateX(' + Math.random() * -50 + 'deg) scale(' + s + ',' + s + ')'
+            });
+        });
+    });
+</script>
+</body>
+</html>

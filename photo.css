@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width:960px;
+    height:450px;
+    margin:150px auto;
+    position:relative;
+}
+
+.container img{
+    width: 200px;
+    height: auto;
+    padding:10px 10px 15px;
+    background-color: rgba(108, 130, 255, 0.3);
+    box-shadow:2px 2px 3px rgba(50, 50, 50, 0.4);
+    transition:all 0.5s ease-in;
+    position:absolute;
+    z-index:1;
+}
+
+.container img:hover{
+    box-shadow:15px 15px 20px rgba(50, 50, 50, 0.4);
+    transform:rotate(0deg) scale(1.8);
+    transform:rotate(0deg) scale(1.8);
+    z-index:2;
+}
+
+.pic1{
+    left: 400px;
+    top: 0;
+    transform: rotate(-5deg);
+}
+
+.pic2{
+    top: 0;
+    left: 600px;
+    transform: rotate(-20deg);
+}
+
+.pic3{
+    bottom: 0;
+    right: 100px;
+    transform: rotate(5deg);
+}
+
+.pic4{
+    bottom:0;
+    left:300px;
+    transform: rotate(-10deg);
+}
+
+.pic5{
+    bottom: 0;
+    left: 0;
+    transform: rotate(-10deg);
+}
+
+.pic6{
+    top: 0;
+    left:0;
+    transform: rotate(10deg);
+}
+
+.pic7{
+    top: 20px;
+    left: 750px;
+    transform: rotate(20deg);
+}
+
+.pic8{
+    bottom: -20px;
+    right: 630px;
+    transform: rotate(5deg);
+}
+
+.pic9{
+    top: 145px;
+    left: 480px;
+    transform: rotate(15deg);
+}
+
+.pic10{
+    left:180px;
+    top:20px;
+    transform: rotate(-10deg);
+}
